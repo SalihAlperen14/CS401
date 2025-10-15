@@ -47,9 +47,9 @@ class LastMessageDefenderAgent(AssistantAgent):
         tool_call_summary_formatter = self._tool_call_summary_formatter
         output_content_type = self._output_content_type
         #print("---- NEW on_messages_stream called ----")
-        #print(f"Messages: {str(messages[-1])}")
+        #print(f"Messages: {str(messages[-1:])}")
         #print("---- OLD on_messages_stream called ----")
-
+        messages = messages[-1:]  # Only keep the last message
         # STEP 1: Add new user/handoff messages to the model context
         await self._add_messages_to_context(
             model_context=model_context,
