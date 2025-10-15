@@ -21,6 +21,7 @@ from autogen_core.models import (
     SystemMessage,
     UserMessage,
 )
+from modifiedAgents import LastMessageDefenderAgent
 
 load_dotenv()
 my_api_key = os.getenv("OPENAI_API_KEY")
@@ -51,7 +52,7 @@ attacker_agent = AssistantAgent(
     ),
 )
 
-defender_agent = AssistantAgent(
+defender_agent = LastMessageDefenderAgent(
     name="DefenderAgent",
     description="Fix the code in case there is a bug.",
     model_client=model_client,
@@ -83,7 +84,7 @@ judge_agent = AssistantAgent(
         2.  **After AttackerAgent sends modified code:**
             * **EXECUTE:** Use your code execution tool to run your Test Case on the *Modified Code*.
             * **EVALUATE:** Compare the output of the Modified Code with the expected output of the Original Code.
-            * **If the outputs are DIFFERENT (Attacker Success):** State the new score, then send the **Modified Code** to DefenderAgent and ask them to fix it.
+            * **If the outputs are DIFFERENT (Attacker Success):** State the new score, then send the **Modified Code** to DefenderAgent and ask them to fix it. When you ask DefenderAgent to fix the code, make sure to add **Modified Code**.
             * **If the outputs are the SAME (Attacker Fail):** AttackerAgent failed. Subtract 1 point from AttackerAgent. State the new score. Write **TERMINATE** to end this round.
 
         3.  **After DefenderAgent sends fixed code:**
@@ -101,7 +102,7 @@ text_mention_termination = TextMentionTermination("TERMINATE")
 max_messages_termination = MaxMessageTermination(max_messages=10)
 termination = text_mention_termination | max_messages_termination
 
-selector_prompt = """Select an agent to perform the next step of the competition.
+selector_prompt = """LasSelect an agent to perform the next step of the competition.
 The JudgeAgent must use its code execution tool to check the behavior of the code provided by the Attacker or Defender.
 
 {roles}
