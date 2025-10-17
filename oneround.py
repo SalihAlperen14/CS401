@@ -12,15 +12,6 @@ from typing import Any, Dict, List
 from autogen_ext.code_executors.docker import DockerCommandLineCodeExecutor
 from autogen_ext.tools.code_execution import PythonCodeExecutionTool
 
-from autogen_core import DefaultTopicId, MessageContext, RoutedAgent, default_subscription, message_handler
-from autogen_core.code_executor import CodeBlock, CodeExecutor
-from autogen_core.models import (
-    AssistantMessage,
-    ChatCompletionClient,
-    LLMMessage,
-    SystemMessage,
-    UserMessage,
-)
 from modifiedAgents import LastMessageDefenderAgent
 
 load_dotenv()
@@ -33,8 +24,8 @@ model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
     api_key=my_api_key,
 )
-
-docker_tool = PythonCodeExecutionTool(DockerCommandLineCodeExecutor(work_dir="coding"))
+docker_executor = DockerCommandLineCodeExecutor(work_dir="coding")
+docker_tool = PythonCodeExecutionTool(docker_executor)
 # Agents
 attacker_agent = AssistantAgent(
     name="AttackerAgent",
