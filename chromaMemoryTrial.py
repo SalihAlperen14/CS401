@@ -2,7 +2,7 @@
 import asyncio
 import os
 from dotenv import load_dotenv
-
+from autogen_core.memory import Memory, MemoryContent, MemoryMimeType
 from autogen_ext.models.openai import OpenAIChatCompletionClient
 from autogen_agentchat.agents import AssistantAgent, UserProxyAgent, CodeExecutorAgent
 from autogen_agentchat.teams import SelectorGroupChat, Swarm
@@ -11,8 +11,23 @@ from autogen_agentchat.ui import Console
 from typing import Any, Dict, List
 from autogen_ext.code_executors.docker import DockerCommandLineCodeExecutor
 from autogen_ext.tools.code_execution import PythonCodeExecutionTool
-
+import chromadb
 from modifiedAgents import LastMessageDefenderAgent
+from autogen_ext.memory.chromadb import (
+    ChromaDBVectorMemory,
+    PersistentChromaDBVectorMemoryConfig,
+    SentenceTransformerEmbeddingFunctionConfig,
+)
+chroma_user_memory = ChromaDBVectorMemory(
+        config=PersistentChromaDBVectorMemoryConfig(
+            collection_name="preferences",
+            k=2,  # Return top k results
+            score_threshold=0.4,  # Minimum similarity score
+            embedding_function_config=SentenceTransformerEmbeddingFunctionConfig(
+                model_name="all-MiniLM-L6-v2"  # Use default model for testing
+            ),
+        )
+    )
 
 load_dotenv()
 my_api_key = os.getenv("OPENAI_API_KEY")
@@ -24,6 +39,7 @@ model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
     api_key=my_api_key,
 )
+
 docker_executor = DockerCommandLineCodeExecutor(work_dir="coding")
 docker_tool = PythonCodeExecutionTool(docker_executor)
 # Agents
@@ -31,6 +47,7 @@ attacker_agent = AssistantAgent(
     name="AttackerAgent",
     description="Attack the code to insert bug.",
     model_client=model_client,
+    memory=[chroma_user_memory],
     system_message=(
         """
         You are responsible for inserting a bug into the code you are given. 
@@ -47,6 +64,7 @@ defender_agent = LastMessageDefenderAgent(
     name="DefenderAgent",
     description="Fix the code in case there is a bug.",
     model_client=model_client,
+    memory=[chroma_user_memory],
     system_message=(
         """
         You are responsible for fixing the given code if there are bugs.
@@ -62,7 +80,8 @@ judge_agent = AssistantAgent(
     description="Controls the competition flow, runs test cases using its code execution tool, and keeps the score.",
     model_client=model_client,
     tools=[docker_tool], 
-    reflect_on_tool_use = True ,
+    reflect_on_tool_use = True,
+    memory=[chroma_user_memory],
     system_message="""
         You are a judge that makes AttackerAgent and DefenderAgent compete.
         Initial Score: AttackerAgent=0, DefenderAgent=0.
@@ -76,13 +95,13 @@ judge_agent = AssistantAgent(
             * **EXECUTE:** Use your code execution tool to run your Test Case on the *Modified Code*.
             * **EVALUATE:** Compare the output of the Modified Code with the expected output of the Original Code.
             * **If the outputs are DIFFERENT (Attacker Success):** State the new score, then send the **Modified Code** to DefenderAgent and ask them to fix it. When you ask DefenderAgent to fix the code, make sure to add **Modified Code**.
-            * **If the outputs are the SAME (Attacker Fail):** AttackerAgent failed. Subtract 1 point from AttackerAgent. State the new score. Write **TERMINATE** to end this round.
+            * **If the outputs are the SAME (Attacker Fail):** AttackerAgent failed. Subtract 1 point from AttackerAgent. State the new score, pure code, attacked code. Write **TERMINATE** to end this round.
 
         3.  **After DefenderAgent sends fixed code:**
             * **EXECUTE:** Use your code execution tool to run your Test Case on the *Fixed Code*.
             * **EVALUATE:** Compare the output of the Fixed Code with the expected output of the Original Code.
-            * **If the outputs are the SAME (Defender Success):** Add 1 point to DefenderAgent and subtract 1 point from AttackerAgent. State the new score. Write **TERMINATE** to end this round.
-            * **If the outputs are DIFFERENT (Defender Fail):** Add 1 point to AttackerAgent and subtract 1 point from DefenderAgent. State the new score. Write **TERMINATE** to end this round.
+            * **If the outputs are the SAME (Defender Success):** Add 1 point to DefenderAgent and subtract 1 point from AttackerAgent. State the new score, pure code, attacked code and defended code. Write **TERMINATE** to end this round.
+            * **If the outputs are DIFFERENT (Defender Fail):** Add 1 point to AttackerAgent and subtract 1 point from DefenderAgent. State the new score, pure code, attacked code and defended code. Write **TERMINATE** to end this round.
         
         **Always explicitly address the next agent in your turn.**
         """
@@ -132,7 +151,16 @@ def find_in_sorted(arr, x):
 """
 
 async def main() -> None:
-    async with docker_tool._executor:
-        await Console(team.run_stream(task=task))
+    for i in range(3):
+        print(f"--- Round {i+1} ---")
+        async with docker_tool._executor:
+            a = await Console(team.run_stream(task=task))
+        last_message_content = str(a.messages[-1].content)
+        filtered_content = last_message_content.replace("TERMINATE", "").strip()
+        await chroma_user_memory.add(
+                    MemoryContent(
+                        content= filtered_content,
+                        mime_type=MemoryMimeType.TEXT)
+                )
 if __name__ == "__main__":
     asyncio.run(main())
