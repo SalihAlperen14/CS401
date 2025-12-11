@@ -24,6 +24,17 @@ model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
     api_key=my_api_key,
 )
+model_client = OpenAIChatCompletionClient(
+    model="qwen2.5-coder",          # The exact model name you pulled in Ollama
+    base_url="http://localhost:11434/v1", # Point to local Ollama server
+    api_key="ollama",               # Ollama requires an API key argument, but it can be any string
+    model_info={                    # Optional: Helps AutoGen understand local model capabilities
+        "vision": False,
+        "function_calling": True,
+        "json_output": False,
+        "family": "unknown",
+    },
+) 
 docker_executor = DockerCommandLineCodeExecutor(work_dir="coding")
 docker_tool = PythonCodeExecutionTool(docker_executor)
 # Agents

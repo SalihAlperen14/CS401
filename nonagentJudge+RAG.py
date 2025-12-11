@@ -34,11 +34,24 @@ load_dotenv()
 my_api_key = os.getenv("OPENAI_API_KEY")
 if not my_api_key:
     raise RuntimeError("OPENAI_API_KEY not found in environment. Put it in .env or export it.")
-
+"""
 model_client = OpenAIChatCompletionClient(
     model="gpt-4o-2024-08-06",
     api_key=my_api_key,
 )
+"""
+
+model_client = OpenAIChatCompletionClient(
+    model="qwen2.5-coder:14b",          # The exact model name you pulled in Ollama
+    base_url="http://localhost:11434/v1", # Point to local Ollama server
+    api_key="ollama",               # Ollama requires an API key argument, but it can be any string
+    model_info={                    # Optional: Helps AutoGen understand local model capabilities
+        "vision": False,
+        "function_calling": False,
+        "json_output": False,
+        "family": "unknown",
+    },
+) 
 embeddings = OpenAIEmbeddings(model="text-embedding-3-large",api_key=my_api_key)
 
 # Initialize ChromaDB as Vector Store
@@ -53,7 +66,24 @@ def add_history(vector_store,history):
     vector_store.add_documents([history])
 def retrieve_history(vector_store,query,k=5):
     return vector_store.similarity_search(query,k=k)
-
+def remove_comments(code):
+    """
+    Removes inline and block comments (#) from Python code 
+    while preserving strings and docstrings.
+    """
+    # Pattern explanation:
+    # Group 1 matches strings: triple-quoted, double-quoted (with escapes), single-quoted (with escapes)
+    # Group 2 matches comments: starts with # and goes to end of line
+    pattern = r"(\"\"\"[\s\S]*?\"\"\"|\'\'\'[\s\S]*?\'\'\'|\"(?:\\.|[^\"\\])*\"|\'(?:\\.|[^'\\])*\')|(#.*)"
+    
+    def replacer(match):
+        # If Group 2 (comment) is found, replace with empty string
+        if match.group(2):
+            return ""
+        # Otherwise it's a string (Group 1), return it exactly as is
+        return match.group(1)
+        
+    return re.sub(pattern, replacer, code)
 def clear_history(vector_store):
     vector_store.delete_collection()
 def docker_runner(script_path: str,
@@ -98,7 +128,7 @@ attacker_agent = AssistantAgent(
         You are responsible for inserting a bug into the code you are given. 
         Insert subtle, non-syntax bugs so the code still runs but produces incorrect behavior. 
         Don't reveal where the bug is — just return the modified code.
-        Don't add any explanations or comments even in python script.
+        Don't add any explanations or comments even in python script. Dont add any comments in the code even like #bug inserted here.
         After you have inserted the bug, generate a single test case (not in the Fixed Code's script) where it also print without any explanation to make sure you inserted bug.
         At the end, return in following format:
         Modified Code:
@@ -158,15 +188,15 @@ async def main() -> None:
     modified_file_defender = os.path.join("coding", "defender_modified.py")
     test_runner_file_defender = os.path.join("coding", "test_runner_defender.py") 
 
-    for i in range(number_of_rounds):
-        print(f"--- Round {i+1} ---")
+    function_files = function_files[:25]  # Limit to number_of_rounds files for testing
+    for i,function_file in enumerate(function_files):
+        print(f"--- Round {i+1}: {str(function_file)} ---")
 
         # Pick a random function file (or sequentially if you prefer)
-        func_file = random.choice(function_files)
-        func_path = os.path.join(folder_path, func_file)
+        func_path = os.path.join(folder_path, function_file)
         function_code = read_function_file(func_path)
         closest_functions = retrieve_history(vector_store,f"""I want to have the most similar code case for the following code:
-        {function_code}""",k=3)
+        {function_code}""",k=2)
         closest_functions_texts = "\n".join([doc.page_content for doc in closest_functions])
         # Create the round-specific task
         attacker_task = f"""    
@@ -203,14 +233,20 @@ These are some similar code modification histories that might help you:
             f.write("from main_code import *\n\n")
             f.write(test_case_attacker + "\n\n")
         
-        res_attacker = docker_runner("coding/test_runner_attacker.py")
+        
+        try:
+            res_attacker = docker_runner("coding/test_runner_attacker.py", timeout=10)
+        except subprocess.TimeoutExpired:
+            print("Attacker's test case execution timed out.")
+            res_attacker = {"stdout": "Timeout", "stderr": "Timeout", "returncode": -1}
+
         res_judge = docker_runner("coding/test_runner_judge.py")
         
         print("Attacker's Output:")
         print(res_attacker["stdout"])
         print("Expected Output:")
         print(res_judge["stdout"])
-        
+        modified_code_attacker = remove_comments(modified_code_attacker)
         if res_attacker["stdout"] != res_judge["stdout"]: # If outputs differ, attacker succeeded
             attacker_agent_score += 1
             defender_task= f"""
