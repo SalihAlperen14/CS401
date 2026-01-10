@@ -300,7 +300,7 @@ Can you add a bug in the following code?:
     # --- SAVE TO EXCEL ---
     print("Saving results to Excel...")
     df = pd.DataFrame(results_data)
-    output_excel = "competition_results_nonAgentJudge_qwen2.5_14b.xlsx"
+    output_excel = "competition_results_nonAgentJudge_qwen2.5_14b_3rd.xlsx"
     df.to_excel(output_excel, index=False)
     print(f"Results saved to {output_excel}")
 
