@@ -1,0 +1,16 @@
+# Match remote https://github.com/SalihAlperen14/CS401 (ipek)
+.env
+coding/
+chroma_db/
+__pycache__/
+
+# Local Python / tooling
+.venv/
+venv/
+*.pyc
+.Python
+
+# Large / generated (SWE-bench, Chroma)
+defender_memory_db_local/
+baseline_results/
+logs/

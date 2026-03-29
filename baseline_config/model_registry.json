@@ -1,0 +1,9 @@
+{
+  "ollama/qwen2.5-coder:14b": {
+    "max_tokens": 8192,
+    "input_cost_per_token": 0.0,
+    "output_cost_per_token": 0.0,
+    "litellm_provider": "ollama",
+    "mode": "chat"
+  }
+}
