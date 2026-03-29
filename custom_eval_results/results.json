@@ -1,0 +1,20 @@
+{
+  "total": 1,
+  "resolved_count": 0,
+  "resolution_rate": 0.0,
+  "avg_f2p_rate": 0.0,
+  "avg_p2p_rate": 0.8461538461538461,
+  "instances": [
+    {
+      "instance_id": "astropy__astropy-12907",
+      "resolved": false,
+      "patch": "",
+      "fail_to_pass_passed": 0,
+      "fail_to_pass_total": 2,
+      "pass_to_pass_passed": 11,
+      "pass_to_pass_total": 13,
+      "agent_steps": 0,
+      "error": "empty_patch"
+    }
+  ]
+}

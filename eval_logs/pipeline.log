@@ -1,0 +1,36 @@
+﻿2026-03-29 22:53:57,631 [INFO] Config: {'num': 1, 'offset': 0, 'instance_ids': ['astropy__astropy-12907'], 'model': 'qwen2.5-coder:14b', 'max_steps': 10, 'pull_timeout': 900, 'output': WindowsPath('custom_eval_results'), 'testbed_python': '/opt/miniconda3/envs/testbed/bin/python', 'force_empty_patch': True, 'dry_run': False}
+2026-03-29 22:54:00,951 [INFO] HTTP Request: HEAD https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-03-29 22:54:00,964 [INFO] HTTP Request: HEAD https://huggingface.co/api/resolve-cache/datasets/SWE-bench/SWE-bench_Verified/91aa3ed51b709be6457e12d00300a6a596d4c6a3/README.md "HTTP/1.1 200 OK"
+2026-03-29 22:54:01,118 [INFO] HTTP Request: HEAD https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/91aa3ed51b709be6457e12d00300a6a596d4c6a3/SWE-bench_Verified.py "HTTP/1.1 404 Not Found"
+2026-03-29 22:54:01,839 [INFO] HTTP Request: HEAD https://s3.amazonaws.com/datasets.huggingface.co/datasets/datasets/SWE-bench/SWE-bench_Verified/SWE-bench/SWE-bench_Verified.py "HTTP/1.1 404 Not Found"
+2026-03-29 22:54:02,135 [INFO] HTTP Request: GET https://huggingface.co/api/datasets/SWE-bench/SWE-bench_Verified/revision/91aa3ed51b709be6457e12d00300a6a596d4c6a3 "HTTP/1.1 200 OK"
+2026-03-29 22:54:02,282 [INFO] HTTP Request: HEAD https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/91aa3ed51b709be6457e12d00300a6a596d4c6a3/.huggingface.yaml "HTTP/1.1 404 Not Found"
+2026-03-29 22:54:02,533 [INFO] HTTP Request: GET https://datasets-server.huggingface.co/info?dataset=SWE-bench/SWE-bench_Verified "HTTP/1.1 200 OK"
+2026-03-29 22:54:02,687 [INFO] HTTP Request: GET https://huggingface.co/api/datasets/SWE-bench/SWE-bench_Verified/tree/91aa3ed51b709be6457e12d00300a6a596d4c6a3/data?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-03-29 22:54:02,837 [INFO] HTTP Request: GET https://huggingface.co/api/datasets/SWE-bench/SWE-bench_Verified/tree/91aa3ed51b709be6457e12d00300a6a596d4c6a3?recursive=false&expand=false "HTTP/1.1 200 OK"
+2026-03-29 22:54:02,996 [INFO] HTTP Request: HEAD https://huggingface.co/datasets/SWE-bench/SWE-bench_Verified/resolve/91aa3ed51b709be6457e12d00300a6a596d4c6a3/dataset_infos.json "HTTP/1.1 404 Not Found"
+2026-03-29 22:54:03,680 [INFO] Dataset loaded: 500 instances total
+2026-03-29 22:54:03,729 [INFO] Running 1 instance(s) ...
+2026-03-29 22:54:03,730 [INFO] ============================================================
+2026-03-29 22:54:03,730 [INFO] Processing astropy__astropy-12907
+2026-03-29 22:54:03,731 [INFO] ============================================================
+2026-03-29 22:54:03,731 [INFO] Pulling image docker.io/swebench/sweb.eval.x86_64.astropy_1776_astropy-12907:latest (may take minutes on first run) ...
+2026-03-29 22:54:05,993 [INFO] Starting container swe_eval_c306e6d5 ...
+2026-03-29 22:54:08,472 [INFO]   force_empty_patch=True: skipping agent loop, using empty patch.
+2026-03-29 22:54:08,473 [INFO]   Agent finished in 0 steps, patch length: 0 chars
+2026-03-29 22:54:16,550 [INFO]   Ran 2 test(s): {'astropy/modeling/tests/test_separable.py::test_separable[compound_model6-result6]': 'NOT_FOUND', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model9-result9]': 'NOT_FOUND'}
+2026-03-29 22:54:18,449 [INFO]   test astropy/modeling/tests/test_separable.py::test_coord_matrix -> PASSED (rc=0)
+2026-03-29 22:54:19,785 [INFO]   test astropy/modeling/tests/test_separable.py::test_cdot -> PASSED (rc=0)
+2026-03-29 22:54:21,334 [INFO]   test astropy/modeling/tests/test_separable.py::test_cstack -> PASSED (rc=0)
+2026-03-29 22:54:22,798 [INFO]   test astropy/modeling/tests/test_separable.py::test_arith_oper -> PASSED (rc=0)
+2026-03-29 22:54:24,160 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0] -> PASSED (rc=0)
+2026-03-29 22:54:25,396 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1] -> PASSED (rc=0)
+2026-03-29 22:54:26,588 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2] -> PASSED (rc=0)
+2026-03-29 22:54:28,133 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3] -> PASSED (rc=0)
+2026-03-29 22:54:29,570 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4] -> PASSED (rc=0)
+2026-03-29 22:54:30,985 [INFO]   test astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5] -> PASSED (rc=0)
+2026-03-29 22:54:34,900 [INFO]   test astropy/modeling/tests/test_separable.py::test_custom_model_separable -> PASSED (rc=0)
+2026-03-29 22:54:34,901 [INFO]   Ran 13 test(s): {'astropy/modeling/tests/test_separable.py::test_coord_matrix': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_cdot': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_cstack': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_arith_oper': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5]': 'PASSED', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]': 'NOT_FOUND', 'astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]': 'NOT_FOUND', 'astropy/modeling/tests/test_separable.py::test_custom_model_separable': 'PASSED'}
+2026-03-29 22:54:34,903 [INFO]   Result: resolved=False | F2P=0/2 | P2P=11/13
+2026-03-29 22:54:36,765 [INFO] Removed container swe_eval_c306e6d5
+2026-03-29 22:54:36,776 [INFO] Results written to custom_eval_results\results.json

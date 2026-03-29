@@ -1,0 +1,664 @@
+=== astropy/modeling/tests/test_separable.py::test_coord_matrix (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_coord_matrix.
+
+Date: 2026-03-29T19:39:53
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_coord_matrix PASSED
+
+============================== 1 passed in 0.31s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_cdot (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_cdot.
+
+Date: 2026-03-29T19:39:56
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_cdot PASSED
+
+============================== 1 passed in 0.31s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_cstack (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_cstack.
+
+Date: 2026-03-29T19:39:57
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_cstack PASSED
+
+============================== 1 passed in 0.26s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_arith_oper (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_arith_oper.
+
+Date: 2026-03-29T19:39:59
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_arith_oper PASSED
+
+============================== 1 passed in 0.21s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0].
+
+Date: 2026-03-29T19:40:00
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model0-result0] PASSED
+
+============================== 1 passed in 0.26s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1].
+
+Date: 2026-03-29T19:40:03
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model1-result1] PASSED
+
+============================== 1 passed in 0.29s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2].
+
+Date: 2026-03-29T19:40:04
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model2-result2] PASSED
+
+============================== 1 passed in 0.28s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3].
+
+Date: 2026-03-29T19:40:06
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model3-result3] PASSED
+
+============================== 1 passed in 0.23s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4].
+
+Date: 2026-03-29T19:40:08
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model4-result4] PASSED
+
+============================== 1 passed in 0.24s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5] (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5].
+
+Date: 2026-03-29T19:40:09
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_separable[compound_model5-result5] PASSED
+
+============================== 1 passed in 0.19s ===============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7] (rc=4) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7].
+
+Date: 2026-03-29T19:40:10
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... ERROR: not found: /testbed/astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]
+(no name '/testbed/astropy/modeling/tests/test_separable.py::test_separable[compound_model7-result7]' in any of [<DocTestModulePlus astropy/modeling/tests/test_separable.py>, <Module astropy/modeling/tests/test_separable.py>])
+
+collected 0 items
+
+============================ no tests ran in 0.23s =============================
+
+=== astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8] (rc=4) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8].
+
+Date: 2026-03-29T19:40:12
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... ERROR: not found: /testbed/astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]
+(no name '/testbed/astropy/modeling/tests/test_separable.py::test_separable[compound_model8-result8]' in any of [<DocTestModulePlus astropy/modeling/tests/test_separable.py>, <Module astropy/modeling/tests/test_separable.py>])
+
+collected 0 items
+
+============================ no tests ran in 0.26s =============================
+
+=== astropy/modeling/tests/test_separable.py::test_custom_model_separable (rc=0) ===
+<frozen importlib._bootstrap>:228: RuntimeWarning: numpy.ndarray size changed, may indicate binary incompatibility. Expected 80 from C header, got 96 from PyObject
+Internet access disabled
+============================= test session starts ==============================
+platform linux -- Python 3.9.20, pytest-7.4.0, pluggy-1.3.0 -- /opt/miniconda3/envs/testbed/bin/python
+cachedir: .pytest_cache
+hypothesis profile 'ci' -> database=None, deadline=None, print_blob=True, derandomize=True
+
+Running tests with Astropy version 5.1.dev623+gd16bfe05a.d20250910.
+Running tests in astropy/modeling/tests/test_separable.py::test_custom_model_separable.
+
+Date: 2026-03-29T19:40:14
+
+Platform: Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35
+
+Executable: /opt/miniconda3/envs/testbed/bin/python
+
+Full Python Version: 
+3.9.20 (main, Oct  3 2024, 07:27:41) 
+[GCC 11.2.0]
+
+encodings: sys: utf-8, locale: UTF-8, filesystem: utf-8
+byteorder: little
+float info: dig: 15, mant_dig: 15
+
+Package versions: 
+Numpy: 1.25.2
+Scipy: not available
+Matplotlib: not available
+h5py: not available
+Pandas: not available
+PyERFA: 2.0.0.3
+Cython: not available
+Scikit-image: not available
+asdf: not available
+pyarrow: not available
+
+Using Astropy options: remote_data: none.
+
+ARCH_ON_CI: undefined
+IS_CRON: undefined
+
+rootdir: /testbed
+configfile: setup.cfg
+plugins: hypothesis-6.82.6, astropy-0.10.0, cov-4.1.0, mock-3.11.1, openfiles-0.5.0, doctestplus-1.0.0, arraydiff-0.5.0, remotedata-0.4.0, xdist-3.3.1, astropy-header-0.2.2, filter-subpackage-0.1.2
+collecting ... collected 1 item
+
+astropy/modeling/tests/test_separable.py::test_custom_model_separable PASSED
+
+============================== 1 passed in 0.22s ===============================
